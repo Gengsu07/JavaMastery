@@ -1,0 +1,12 @@
+project:
+  output-dir: docs
+  type: website
+  title: "Java Mastery"
+
+website:
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Fundamental"
+        href: Fundamental/index.qmd

@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "Fundamental/index.html#date-2025-02-26",
+    "href": "Fundamental/index.html#date-2025-02-26",
+    "title": "Java Mastery - Fundamental",
+    "section": "date: 2025-02-26",
+    "text": "date: 2025-02-26"
+  },
+  {
+    "objectID": "Fundamental/index.html#basic-syntax",
+    "href": "Fundamental/index.html#basic-syntax",
+    "title": "Java Mastery - Fundamental",
+    "section": "Basic Syntax",
+    "text": "Basic Syntax\nadsfasdf"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Java Mastery",
+    "section": "",
+    "text": "Home\nWelcome to Java Mastery!"
+  },
+  {
+    "objectID": "Fundamental/index.html",
+    "href": "Fundamental/index.html",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "public class Main{\n    public void main(){\n    // program logic\n    }\n}\n - Setiap program selalui ada Main Class - access modifier ditaruh didepan dari class atau method contohnya public - metode dapat dikumpulkan dalam class yang yg sama - class dapat diorganize dalam satu package\n\n\n\n\nClass –&gt; Pascal Case\nMetode –&gt; camelCase\n\n\n\n\n\n\n\nProgram dalam Java dapat dijalankan dalam semua platform sehingga platform independen\n\n\n\n\nAda 2 tahapan utama:\n\n\nSource code .java di compile menjadi bytecode. Bytecode adalah file yang berisi instruksi-instruksi yang dapat diinterpretasikan oleh JVM.\n\nBytecode dijalankan oleh JVM. JVM akan mengeksekusi instruksi-instruksi yang ada di bytecode untuk mengeksekusi program.\n\njadi setiap komputer harus memiliki JRE (Java Runtime Environment) yang berisi JVM untuk menjalankan program Java.\n\n\n\n\n\n sehingga merubah variable x, dan y yang memiliki nilai sama tidak akan merubah nilai variable yang lain. \n\n\n\nindependen, tiap variable memiliki alamat memori sendiri menyimpan simple data values\n\n \n\nbyte : an integer value between 128 to 127 \nint : an integer value between -2147483648 to 2147483647\nfloat: a 4 byte floating-point number\ndouble: a 8 byte floating-point number\nboolean: true / false\nchar: pakai single quote\n\npublic class Main {\n    public static void main(String[] args) {\n        float saldo = 10000000.33F;\n        byte umur = 28;\n        System.out.println(\"Hello, World!\");\n        System.out.println(saldo);\n    }\n}\nIntellij Idea saat merubah dari int ke float atau tipe data lain akan error karena IDE melakukan type checking, cara mengatasi error menambahkan F dibelakang angka\n\n\n\n\n merubah variable x, dan y yang memiliki nilai sama akan merubah nilai variable yang lain.\n\nmereferensikan alamat memori dari objek lain menyimpan komplek data\n\n\n\nString\nArray\nObject  Reference types adalah tipe data yang memiliki referensi ke objek lain. Objek yang direferensikan dapat berubah nilainya sehingga memiliki metode dan atribut dari kelas tersebut.\n\nimport java.awt.*;\nimport java.util.Date;\n\npublic class Main {\n    public static void main(String[] args) {\n        Date now = new Date();\n        Point point1 = new Point(1,1);\n        Point point2 = point1;\n        point2.x = 5;\n        System.out.println(point1);\n    }\n}\njava.awt.Point[x=5,y=1]\nmembuat variable now dengan tipe data Date yang merupakan reference type dari java.util.Date. Ketika dijalankan akan menampilkan waktu saat program dijalankan. jadi pakai new() untuk inisiasi membuat objek baru.\n\n\n\n\n\nmerupakan reference data type sehingga memiliki atribut dan metode. Namun, untuk memnbuat variable string bisa dengan cara singkat tanpa new() seeperti berikut\nString str = \"Hello World\";\n\nendswith\nstartswith\nlength\nindexOf****\ntoLowerCase\ntoUpperCase\ntolowerCase\ntrim\nreplace\n\nString is immutable, so return new object\npublic class Main {\n    public static void main(String[] args) {\n        Date now = new Date();\n        String kata = \"Hari ini tanggal :\" + now;\n        System.out.println(kata);\n        System.out.println(kata.length());\n        System.out.println(kata.startsWith(\"H\"));\n        System.out.println(kata.endsWith(\"H\"));\n        System.out.println(kata.toLowerCase());\n        System.out.println(kata.toUpperCase());\n        System.out.println(kata.indexOf(\"a\"));\n        System.out.println(kata.replace(\"i\",\"!\"));\n        System.out.println(kata);\n    }\n}\nHari ini tanggal :Wed Feb 26 15:57:33 WIB 2025\n46\ntrue\nfalse\nhari ini tanggal :wed feb 26 15:57:33 wib 2025\nHARI INI TANGGAL :WED FEB 26 15:57:33 WIB 2025\n1\nHar! !n! tanggal :Wed Feb 26 15:57:33 WIB 2025\nHari ini tanggal :Wed Feb 26 15:57:33 WIB 2025\n\n\n\n\nsyntax digunakan untuk menampilkan karakter yang sudah terdefinisi dalam bahasa pemrograman.\n\n*** : untuk pindah ke baris berikutnya\n** : untuk membuat tab\n\" : untuk menampilkan karakter ”\n' : untuk menampilkan karakter ’\n\\ : untuk menampilkan karakter\n\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hari ini tanggal :\\n\" + new Date());\n        System.out.println(\"Hari ini tanggal :\\t\" + new Date());\n        System.out.println(\"Hari ini tanggal :\\\" \" + new Date());\n        System.out.println(\"Hari ini tanggal :\\' \" + new Date());\n        System.out.println(\"Hari ini tanggal :\\\\ \" + new Date());\n    }\n}\nHari ini tanggal :\nWed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :  Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal : \" Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :'Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :\\ Wed Feb 26 16:03:08 WIB 2025\n\n\n\n\n\nFix Length : array dengan panjang yang sama, tidak bisa ditambahkan elemen atau dihapus elemen Not Sorted : secara default\n\n\n\n\npakai datatype[]\npakai new datatype[]\nakses elemen dengan []\n\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        int[] numbers = new int[5];\n        numbers[0] = 1;\n        numbers[1] = 1;\n\n        System.out.println(numbers);\n        //[I@7b23ec81\n\n        System.out.println(Arrays.toString(numbers));\n        //[1, 1, 0, 0, 0]\n        // isi dari elemen yg tidak di inisiasi otomatis 0\n    }\n} \nhasilnya ternyata bukan isi dari array tetapi adalah alamat memori dari array. Untuk menampilkan kita bisa menggunakan metode toString()\n\n\n\n\npakai {}\n\nint[] numbers = {1,2,4,5,6};\n\n//Sorted\nArrays.sort(numbers);"
+  },
+  {
+    "objectID": "Fundamental/index.html#anatomy-skeleton",
+    "href": "Fundamental/index.html#anatomy-skeleton",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "public class Main{\n    public void main(){\n    // program logic\n    }\n}\n - Setiap program selalui ada Main Class - access modifier ditaruh didepan dari class atau method contohnya public - metode dapat dikumpulkan dalam class yang yg sama - class dapat diorganize dalam satu package\n\n\n\n\nClass –&gt; Pascal Case\nMetode –&gt; camelCase"
+  },
+  {
+    "objectID": "Fundamental/index.html#java-is-platform-independent",
+    "href": "Fundamental/index.html#java-is-platform-independent",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "Program dalam Java dapat dijalankan dalam semua platform sehingga platform independen\n\n\n\n\nAda 2 tahapan utama:\n\n\nSource code .java di compile menjadi bytecode. Bytecode adalah file yang berisi instruksi-instruksi yang dapat diinterpretasikan oleh JVM.\n\nBytecode dijalankan oleh JVM. JVM akan mengeksekusi instruksi-instruksi yang ada di bytecode untuk mengeksekusi program.\n\njadi setiap komputer harus memiliki JRE (Java Runtime Environment) yang berisi JVM untuk menjalankan program Java."
+  },
+  {
+    "objectID": "Fundamental/index.html#data-types",
+    "href": "Fundamental/index.html#data-types",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "sehingga merubah variable x, dan y yang memiliki nilai sama tidak akan merubah nilai variable yang lain. \n\n\n\nindependen, tiap variable memiliki alamat memori sendiri menyimpan simple data values\n\n \n\nbyte : an integer value between 128 to 127 \nint : an integer value between -2147483648 to 2147483647\nfloat: a 4 byte floating-point number\ndouble: a 8 byte floating-point number\nboolean: true / false\nchar: pakai single quote\n\npublic class Main {\n    public static void main(String[] args) {\n        float saldo = 10000000.33F;\n        byte umur = 28;\n        System.out.println(\"Hello, World!\");\n        System.out.println(saldo);\n    }\n}\nIntellij Idea saat merubah dari int ke float atau tipe data lain akan error karena IDE melakukan type checking, cara mengatasi error menambahkan F dibelakang angka\n\n\n\n\n merubah variable x, dan y yang memiliki nilai sama akan merubah nilai variable yang lain.\n\nmereferensikan alamat memori dari objek lain menyimpan komplek data\n\n\n\nString\nArray\nObject  Reference types adalah tipe data yang memiliki referensi ke objek lain. Objek yang direferensikan dapat berubah nilainya sehingga memiliki metode dan atribut dari kelas tersebut.\n\nimport java.awt.*;\nimport java.util.Date;\n\npublic class Main {\n    public static void main(String[] args) {\n        Date now = new Date();\n        Point point1 = new Point(1,1);\n        Point point2 = point1;\n        point2.x = 5;\n        System.out.println(point1);\n    }\n}\njava.awt.Point[x=5,y=1]\nmembuat variable now dengan tipe data Date yang merupakan reference type dari java.util.Date. Ketika dijalankan akan menampilkan waktu saat program dijalankan. jadi pakai new() untuk inisiasi membuat objek baru."
+  },
+  {
+    "objectID": "Fundamental/index.html#string",
+    "href": "Fundamental/index.html#string",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "merupakan reference data type sehingga memiliki atribut dan metode. Namun, untuk memnbuat variable string bisa dengan cara singkat tanpa new() seeperti berikut\nString str = \"Hello World\";\n\nendswith\nstartswith\nlength\nindexOf****\ntoLowerCase\ntoUpperCase\ntolowerCase\ntrim\nreplace\n\nString is immutable, so return new object\npublic class Main {\n    public static void main(String[] args) {\n        Date now = new Date();\n        String kata = \"Hari ini tanggal :\" + now;\n        System.out.println(kata);\n        System.out.println(kata.length());\n        System.out.println(kata.startsWith(\"H\"));\n        System.out.println(kata.endsWith(\"H\"));\n        System.out.println(kata.toLowerCase());\n        System.out.println(kata.toUpperCase());\n        System.out.println(kata.indexOf(\"a\"));\n        System.out.println(kata.replace(\"i\",\"!\"));\n        System.out.println(kata);\n    }\n}\nHari ini tanggal :Wed Feb 26 15:57:33 WIB 2025\n46\ntrue\nfalse\nhari ini tanggal :wed feb 26 15:57:33 wib 2025\nHARI INI TANGGAL :WED FEB 26 15:57:33 WIB 2025\n1\nHar! !n! tanggal :Wed Feb 26 15:57:33 WIB 2025\nHari ini tanggal :Wed Feb 26 15:57:33 WIB 2025"
+  },
+  {
+    "objectID": "Fundamental/index.html#escape-sequence",
+    "href": "Fundamental/index.html#escape-sequence",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "syntax digunakan untuk menampilkan karakter yang sudah terdefinisi dalam bahasa pemrograman.\n\n*** : untuk pindah ke baris berikutnya\n** : untuk membuat tab\n\" : untuk menampilkan karakter ”\n' : untuk menampilkan karakter ’\n\\ : untuk menampilkan karakter\n\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hari ini tanggal :\\n\" + new Date());\n        System.out.println(\"Hari ini tanggal :\\t\" + new Date());\n        System.out.println(\"Hari ini tanggal :\\\" \" + new Date());\n        System.out.println(\"Hari ini tanggal :\\' \" + new Date());\n        System.out.println(\"Hari ini tanggal :\\\\ \" + new Date());\n    }\n}\nHari ini tanggal :\nWed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :  Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal : \" Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :'Wed Feb 26 16:03:08 WIB 2025\nHari ini tanggal :\\ Wed Feb 26 16:03:08 WIB 2025"
+  },
+  {
+    "objectID": "Fundamental/index.html#arrays",
+    "href": "Fundamental/index.html#arrays",
+    "title": "Java Mastery - Fundamental",
+    "section": "",
+    "text": "Fix Length : array dengan panjang yang sama, tidak bisa ditambahkan elemen atau dihapus elemen Not Sorted : secara default\n\n\n\n\npakai datatype[]\npakai new datatype[]\nakses elemen dengan []\n\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        int[] numbers = new int[5];\n        numbers[0] = 1;\n        numbers[1] = 1;\n\n        System.out.println(numbers);\n        //[I@7b23ec81\n\n        System.out.println(Arrays.toString(numbers));\n        //[1, 1, 0, 0, 0]\n        // isi dari elemen yg tidak di inisiasi otomatis 0\n    }\n} \nhasilnya ternyata bukan isi dari array tetapi adalah alamat memori dari array. Untuk menampilkan kita bisa menggunakan metode toString()\n\n\n\n\npakai {}\n\nint[] numbers = {1,2,4,5,6};\n\n//Sorted\nArrays.sort(numbers);"
+  }
+]

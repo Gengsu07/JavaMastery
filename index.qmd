@@ -1,0 +1,7 @@
+---
+  title: "Java Mastery"
+  author: "Gengsudev"
+---
+# Home
+
+Welcome to Java Mastery!
