@@ -1,12 +1,31 @@
+highlight-style: pygments
+
 project:
   output-dir: docs
   type: website
   title: "Java Mastery"
+  preview:
+    browser: true
+    port: 8080
+    watch-inputs: true
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+  pdf: default
 
 website:
   navbar:
     background: primary
-    search: true
     left:
       - text: "Fundamental"
-        href: Fundamental/index.qmd
+        href: Fundamental/types.qmd
+  sidebar:
+    style: docked
+    contents:
+      - text: "Types"
+        href: Fundamental/types.qmd
+  search:
+    location: navbar
+    type: overlay
