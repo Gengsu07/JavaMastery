@@ -9,7 +9,7 @@ toc : true
 
 # Java Mastery - Fundamental
 
-## Anatomy / Skeleton
+## **Anatomy / Skeleton**
 
 ``` java
 public class Main{
@@ -56,7 +56,7 @@ jadi setiap komputer harus memiliki JRE (Java Runtime Environment) yang berisi J
 
 ---
 
-## Data Types
+## **Data Types**
 
 ![](media/primitive.png)
 sehingga merubah variable x, dan y yang memiliki nilai sama tidak akan merubah nilai variable yang lain.
@@ -124,7 +124,7 @@ membuat variable now dengan tipe data Date yang merupakan reference type dari ja
 
 ---
 
-## String
+## **String**
 merupakan reference data type sehingga memiliki atribut dan metode.
 Namun, untuk memnbuat variable string bisa dengan cara singkat tanpa new() seeperti berikut
 
@@ -176,13 +176,13 @@ Hari ini tanggal :Wed Feb 26 15:57:33 WIB 2025
 
 ---
 
-## Escape Sequence
+## **Escape Sequence**
 syntax digunakan untuk menampilkan karakter yang sudah terdefinisi dalam bahasa pemrograman.
 
-- **\n** : untuk pindah ke baris berikutnya
-- **\t** : untuk membuat tab
-- **\"** : untuk menampilkan karakter "
-- **\'** : untuk menampilkan karakter '
+- **\\n** : untuk pindah ke baris berikutnya
+- **\\t** : untuk membuat tab
+- **\\"** : untuk menampilkan karakter "
+- **\\'** : untuk menampilkan karakter '
 - **\\** : untuk menampilkan karakter \
 
 ```java
@@ -206,13 +206,15 @@ Hari ini tanggal :\ Wed Feb 26 16:03:08 WIB 2025
 ```
 ---
 
-## Arrays
-> **Fix Length** : array dengan panjang yang sama, tidak bisa ditambahkan elemen atau dihapus elemen \n 
+## **Arrays**
+> **Fix Length** : array dengan panjang yang sama, tidak bisa ditambahkan elemen atau dihapus elemen \n
+<br> 
 > **Not Sorted** : secara default 
 
-### **Cara Deklarasi lama**
-- pakai datatype[]
-- pakai new datatype[]
+### Cara Deklarasi lama
+- pakai datatype[] di deklarasi variable
+- karena merupakan reference type, maka pakai new datatype[] 
+- di dalam [] adalah ukuran array
 - akses elemen dengan []
 
 ```java
@@ -235,7 +237,7 @@ public class Main {
 
 hasilnya ternyata bukan isi dari array tetapi adalah alamat memori dari array. Untuk menampilkan kita bisa menggunakan metode toString()
 
-### **Cara Deklarasi Baru**
+### Cara Deklarasi Baru
 - pakai {}
   
 ```java
@@ -243,4 +245,146 @@ int[] numbers = {1,2,4,5,6};
 
 //Sorted
 Arrays.sort(numbers);
+```
+
+---
+
+## **Multi Dimensioanl Arrays**
+Array dapat memiliki lebih dari 1 dimensi.
+
+### Cara Deklarasi
+- pakai datatype[][] di deklarasi variable
+- karena merupakan reference type, maka pakai new datatype[][] 
+- di dalam [] adalah ukuran array row, column, dst
+- akses elemen dengan [] sejumlah dimensi
+
+```java
+class MultiDImArray{
+    public static void oldWay(String[] args){
+        int[] [] tabledata = new int [2][3];
+        tabledata[0][0] = 7;
+        System.out.println(Arrays.deepToString(tabledata));
+    }
+    //[[7, 0, 0], [0, 0, 0]]
+
+    public static void newWay(String[] args){
+        int[][] tabledata = {{1,2,3},{4,5,6},{7,8,9}};
+        tabledata[1][0] = 8;
+        System.out.println(Arrays.deepToString(tabledata));
+    }
+    //[[1, 2, 3], [8, 5, 6], [7, 8, 9]]
+}
+```
+
+---
+
+## **Constant**
+seperti di bahasa yg lain,java juga memiliki konstanta. konstanta adalah variabel yang nilainya tidak berubah.
+
+- **final** : untuk menandakan bahwa variabel tidak dapat diubah
+- **static** : untuk menandakan bahwa variabel bersifat global
+
+```java
+public class Constant {
+    public static void main(String [] args){
+        final float PI = 3.14f;
+        System.out.println("PI: " + PI);
+    }
+}
+```
+- tambahkan final di deklarasi variabel PI, maka nilainya tidak dapat diubah.
+- tambahkan f dibelakang angka agar menjadi float karena scr default desimal
+
+---
+
+## **Arithmetics Operators**
+- +, -, *, /, %, ++, --
+- /: division operator, menghasilkan nilai sesuai dengan operand
+- %: modulus operator, menghasilkan sisa bagi dari pembagian
+- ++ : increment operator, 
+- -- : decrement operator, 
+- prefix maka akan menambah 1 terlebih dahulu kemudian mengembalikan nilai
+- postfix maka akan mengembalikan nilai kemudian menambah 1
+
+```java
+public class Arithmetics {
+    public static void main(String[] args) {
+        int result = 10+3;
+        int result2 = 10-3;
+        double result3 = 10/3.0;
+        int result4 = 10*3;
+        int x = 1;
+        int y = x++;
+        System.out.println(result); // 13
+        System.out.println(result2); // 7
+        System.out.println(result3); // 3.3333333333333335
+        System.out.println(result4); // 30
+        System.out.println(x); // 2
+        System.out.println(y); // 1
+    }
+}
+```
+---
+
+## **Casting**
+melakukan konversi tipe data dari satu tipe ke tipe data lain.
+
+### Implicit Casting
+- Casting dilakukan secara otomatis
+- Tipe data yang lebih sempit akan di cast ke tipe data yang lebih besar sehingga tidak ada data presisi yang hilang
+- byte > short > int > long > float > double
+
+
+### Explicit Casting
+- Casting dilakukan secara manual
+- Tipe data yang lebih besar akan di cast ke tipe data yang lebih sempit sehingga data presisi yang hilang
+
+### Parsing (dari tipe data yg berbeda)
+- misal dari string ke int atau double
+- menggunakan Kelas wrapper dari primitif data type
+- Integer.parseInt("10")
+- Double.parseDouble("3.14")
+
+```java
+public class Casting {
+    public static void main(String[] args) {
+        short x = 1;
+        double pecahan = 5.0;
+        String angka = "10";
+
+        int hasil = x + 2;
+        double hasil2 = x + 3;
+        int hasil3 = (int) pecahan + 4;
+        System.out.println(hasil);
+        System.out.println(hasil2);
+        System.out.println(hasil3);
+        System.out.println(Integer.parseInt(angka));
+    }
+}
+```
+
+---
+## **Math Class**
+di dalam bawaan java, terdapat class Math yang berisi fungsi-fungsi matematika seperti:
+<br>
+- round
+- ceil
+- floor
+- random
+- min
+- max,dll
+
+```java
+public class MathClass {
+    public static void main(String[] args) {
+        double x = 1.1;
+        int acak= (int) (Math.random() *100);
+        int ceil = (int) Math.ceil(x);
+        System.out.println(Math.round(x));
+        System.out.println(ceil);
+        System.out.println(acak);
+        System.out.println(Math.max(10,23));
+        System.out.println(Math.min(10,23));
+    }
+}
 ```
